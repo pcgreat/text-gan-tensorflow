@@ -67,7 +67,7 @@ flags.DEFINE_float("output_dropout_keep_prob", 0.5, (
     "Dropout keep rate for output vectors."))
 
 FLAGS = flags.FLAGS
-opts = FLAGS.__flags  # dict TODO: make class?
+opts = FLAGS.flag_values_dict()  # dict TODO: make class?
 
 set_logging_verbosity(FLAGS.logging_verbosity)
 

@@ -6,3 +6,5 @@ lib/
 pip-selfcheck.json
 __*
 share/
+vocab.pkl
+tmp/

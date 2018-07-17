@@ -2,6 +2,8 @@
 
 Under construction..
 
+* Compatible with tf1.8
+
 ### References
 
 * [Professor Forcing: A New Algorithm for Training Recurrent Networks](https://arxiv.org/abs/1610.09038)

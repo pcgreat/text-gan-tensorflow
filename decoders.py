@@ -84,7 +84,7 @@ def gumbel_decoder_fn(encoder_state, embedding_matrix, output_projections, maxim
 
 if __name__ == "__main__":
     import numpy as np
-    from tensorflow.contrib import seq2seq
+    import myseq2seq as seq2seq
     from tensorflow.contrib import rnn
 
     sequence_length = 25

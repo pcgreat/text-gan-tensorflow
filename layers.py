@@ -2,12 +2,9 @@
 
 Convenience functions but Input and Output should be tensors.
 """
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 import tensorflow as tf
-from tensorflow.contrib import seq2seq
+import myseq2seq as seq2seq
 
 
 _phase = tf.Variable(False, name='phase', trainable=False, collections=[tf.GraphKeys.LOCAL_VARIABLES])
@@ -108,7 +105,7 @@ def embedding_layer(tensor, vocab_size=None, embedding_dim=None, embedding_matri
         embedding_matrix = tf.get_variable("embedding_matrix", initializer=initializer(shape=(vocab_size, embedding_dim)))
 
     out = tf.nn.embedding_lookup(embedding_matrix, tensor)
-    return out 
+    return out
 
 
 @layer
@@ -135,6 +132,11 @@ def recurrent_layer(tensor, cell=None, hidden_dims=128, sequence_length=None, de
         # TODO: turn off sequence_length?
         outputs, final_state, final_context_state = seq2seq.dynamic_rnn_decoder(
             cell, decoder_fn, inputs=None, sequence_length=sequence_length)
+
+
+
+
+
 
     if return_final_state:
         return final_state
